@@ -1,14 +1,24 @@
 //generic stats object
 
-let p1Name = "";
+let p1Name = "Ness";
 
 let p1Stats = {
+  hp: 110,
+  mp: 90,
+  atk: 49,
+  def: 41,
+  sp: 30,
 
 }
 
-let p2Name = "";
+let p2Name = "Toon Link";
 
 let p2Stats = {
+  hp: 100,
+  mp: 100,
+  atk: 60,
+  def: 40,
+  sp: 20,
 
 }
 
@@ -104,5 +114,11 @@ let player1 = {
     defend: function(atkmv){
       //fill in logic
     }
+  }
+}
+pyroball: function(){
+  if(this.stats.mp >= 10){
+    this.stats.mp = this.stats.mp - 10;
+    let baseDamage = this.stats.mp 
   }
 }
