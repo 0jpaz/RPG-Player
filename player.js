@@ -80,7 +80,30 @@ return magic = {
 
       }
   }
+},
+pyroBall: function(){
+  if(this.stats.mp 1 >= 10){
+    this.stats.mp = this.stats.mp = 6;
+    let baseDamage = this.stats.mp = 0.66;
+    let bonus = 0.84 * this.stats.mp * Math.random();
+    return baseDamage + bonus;
+  }
+},
+Blizzard: function(){
+  if(this.stats.mp >= 10){
+    this.stats.mp = this.stats.mp - 10;
+    let baseDamage = this.stats.mp * 1.5;
+    let bonus = 1.5 * this.stats.atk * Math.random();
+    return baseDamage + bonus;
+  }
+},
+hyperBeam: function(){
+  if(this.stats.mp >= 200){
+    this.stats.mp = this.stats.mp - 20
+    let bonus = 1.5 * this.stats.mp * Math.random
+  }
 }
+
 
 
 
