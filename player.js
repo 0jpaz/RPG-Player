@@ -26,7 +26,7 @@ let p1battle = {
 //not finished
   attack: function(mv){
     if (mv === 1){
-      reutrn this.moves.punch();
+      return this.moves.punch();
     }
     else if (mv === 2){
       return this.move.other;
@@ -46,7 +46,7 @@ let physical = {
     let baseDamage = this.stats.atk*Math.random();
     let bonus = 0.5*this.stats.atk*Math.random();
     return baseDamage+bonus;
-  };
+  },
   charge:function(){
     let pain = Math.random();
     let bonus = 0.5*this.stats.atk*Math.random();
@@ -61,7 +61,7 @@ else{
 }
 
 
-return magic = {
+let magic = {
   hydroPump: function (){
     if (this.stats.mp >= 8){
       this.stats.mp = this.stats.mp -8;
@@ -75,14 +75,14 @@ return magic = {
       else if(tetradice <0.60){
         return 3*pump
       }
-      else(
-        return 4*pumps
+      else{
+        return 4*pumps;
 
       }
   }
 },
 pyroBall: function(){
-  if(this.stats.mp 1 >= 10){
+  if(this.stats.mp  >= 10){
     this.stats.mp = this.stats.mp = 6;
     let baseDamage = this.stats.mp = 0.66;
     let bonus = 0.84 * this.stats.mp * Math.random();
@@ -100,24 +100,23 @@ Blizzard: function(){
 hyperBeam: function(){
   if(this.stats.mp >= 200){
     this.stats.mp = this.stats.mp - 20
-    let bonus = 1.5 * this.stats.mp * Math.random
+    let bonus = 1.5 * this.stats.mp * Math.random();
+  return baseDamage + bonus;
+  }
+},
+shadowClaw: function(){
+  if(this.stats.mp >= 6){
+    let baseDamage = 1 * this.stats.atk;
+    let bonus = 0.5 * this.stats.atk * Math.random();
+    return baseDamage + bonus;
+  }
+  else{
+    return this.stats.atk + bonus;
   }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-let p1Pack = [2,2,1,0,1,1,0,0];
+}//end of magic
 
 
 //Assembling your player.
@@ -126,22 +125,5 @@ let player1 = {
   name: p1Name,
   stats: p1Stats,
   moves: p1Moves,
-  use: function(){
-    //fill in with a ton of if and else ifs
-  },
-  pack: myPack,
-  battle: {
-    attack: function(mv){
-      //fill in logic
-    },
-    defend: function(atkmv){
-      //fill in logic
-    }
-  }
-}
-pyroball: function(){
-  if(this.stats.mp >= 10){
-    this.stats.mp = this.stats.mp - 10;
-    let baseDamage = this.stats.mp 
-  }
-}
+  battle:p1Battle
+};
